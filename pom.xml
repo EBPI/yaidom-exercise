@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <properties>
-    <scala.version>2.12.4</scala.version>
+    <scala.version>2.12.8</scala.version>
     <scala.binary.version>2.12</scala.binary.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -143,18 +143,18 @@
     <dependency>
       <groupId>org.scala-lang.modules</groupId>
       <artifactId>scala-xml_${scala.binary.version}</artifactId>
-      <version>1.0.6</version>
+      <version>1.1.0</version>
     </dependency>
     <dependency>
       <groupId>eu.cdevreeze.yaidom</groupId>
       <artifactId>yaidom_${scala.binary.version}</artifactId>
-      <version>1.7.1</version>
+      <version>1.9.0</version>
     </dependency>
     <!-- Testing dependencies -->
     <dependency>
       <groupId>org.scalatest</groupId>
       <artifactId>scalatest_${scala.binary.version}</artifactId>
-      <version>3.0.4</version>
+      <version>3.0.5</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

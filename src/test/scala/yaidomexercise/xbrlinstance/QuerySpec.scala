@@ -40,7 +40,7 @@ import eu.cdevreeze.yaidom.queryapi.HasENameApi.withEName
  *
  * Study the input file (sample-Instance-Proof.xml) as well, because the test methods use this input.
  *
- * Make sure to use a Java 8 JDK.
+ * Make sure to use a Java 8 JDK (or later).
  *
  * @author Chris de Vreeze
  */
