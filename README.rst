@@ -37,7 +37,7 @@ have this documentation at your disposal in a browser.
 .. _`SBT`: http://www.scala-sbt.org/download.html
 .. _`Maven`: https://maven.apache.org/download.cgi
 .. _`Maven central`: https://search.maven.org/
-.. _`yaidom API documentation`: https://www.javadoc.io/doc/eu.cdevreeze.yaidom/yaidom_2.12/1.7.1
+.. _`yaidom API documentation`: https://www.javadoc.io/doc/eu.cdevreeze.yaidom/yaidom_2.12/1.9.0
 .. _`javadoc.io`: http://javadoc.io/
 
 
@@ -80,7 +80,7 @@ alternative that is more suitable in domains like XBRL.
 
 .. _`Understanding Namespaces`: http://www.lenzconsulting.com/namespaces/
 .. _`yaidom documentation`: https://dvreeze.github.io/yaidom-and-namespaces.html
-.. _`yaidom API documentation`: https://www.javadoc.io/doc/eu.cdevreeze.yaidom/yaidom_2.12/1.7.1
+.. _`yaidom API documentation`: https://www.javadoc.io/doc/eu.cdevreeze.yaidom/yaidom_2.12/1.9.0
 .. _`XBRL`: https://www.xbrl.org/
 .. _`Getting started with XBRL for developers`: https://www.xbrl.org/the-standard/how/getting-started-for-developers/
 .. _`sample XBRL instance`: https://github.com/dvreeze/yaidom-exercise/blob/master/src/test/resources/sample-Instance-Proof.xml
