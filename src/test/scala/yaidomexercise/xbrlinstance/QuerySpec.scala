@@ -78,7 +78,7 @@ class QuerySpec extends FlatSpec {
     // Semantic query: Find all XBRL contexts whose ID starts with the string "I-2007".
 
     // Yaidom query: Filter all child elements of the root element named xbrli:context, having an ID attribute
-    // starting with string "I-2007".
+    // starting with string "I-2007". Equivalent XPath: /xbrli:xbrl/xbrli:context[starts-with(@id, 'I-2007')]
 
     def hasIdStartingWithI2007(elem: BackingElemApi): Boolean = {
       elem.attributeOption(IdEName).exists(_.startsWith("I-2007"))
@@ -112,6 +112,7 @@ class QuerySpec extends FlatSpec {
     // Semantic query: Find all explicit members in XBRL contexts.
 
     // Yaidom query: Filter all descendant elements of the root element named xbrldi:explicitMember.
+    // Equivalent XPath: /xbrli:xbrl//xbrldi:explicitMember
 
     // Implement the following function, using the EName corresponding to QName xbrldi:explicitMember to test the element name
 
@@ -150,6 +151,7 @@ class QuerySpec extends FlatSpec {
     // Semantic query: Find all elements in the xbrli namespace.
 
     // Yaidom query: Filter all descendant-or-self elements of the root element in the xbrli namespace.
+    // Equivalent XPath: //*[namespace-uri() = 'http://www.xbrl.org/2003/instance']
 
     // Implement the following function, using the namespace corresponding to prefix "xbrli" to test the element's namespace
 
@@ -185,7 +187,7 @@ class QuerySpec extends FlatSpec {
   it should "support retrieval of attributes" in {
     // Semantic query: Find all XBRL unit IDs.
 
-    // Yaidom query: Find all xbrli:unit element ID attributes.
+    // Yaidom query: Find all xbrli:unit element ID attributes. Equivalent XPath: //xbrli:unit/@id
     // This query contains several yaidom query API calls, instead of just one query API call.
 
     // Implement the following variable. Find all xbrli:unit elements, and return their id attribute values.
@@ -207,6 +209,7 @@ class QuerySpec extends FlatSpec {
     // Semantic query: Find all numeric item fact unitRefs.
 
     // Yaidom query: Find all unitRef attributes in descendant elements of the root element.
+    // Equivalent XPath: /xbrli:xbrl//*/@unitRef
     // This query contains several yaidom query API calls, instead of just one query API call.
 
     // Implement the following variable. Find all descendant elements, and return their optional unitRef attributes.
@@ -229,6 +232,7 @@ class QuerySpec extends FlatSpec {
 
     // Yaidom query: Find all texts of descendant elements of the root element that have
     // element name gaap:RelatedPartyTypeOfRelationship.
+    // Equivalent XPath: /xbrli:xbrl//gaap:RelatedPartyTypeOfRelationship/text()
 
     // Implement the following variable. Find all gaap:RelatedPartyTypeOfRelationship elements, and return their element texts.
 
@@ -249,7 +253,7 @@ class QuerySpec extends FlatSpec {
     // Semantic query: Find all measures (as expanded names).
 
     // Yaidom query: Find all texts as ENames of descendant elements of the root element that have
-    // element name xbrli:measure.
+    // element name xbrli:measure. Almost equivalent XPath (may not work): /xbrli:xbrl//xbrli:measure/resolve-QName(./text(), .)
 
     // Implement the following variable. Find all xbrli:measure elements, and return their element texts resolved as ENames.
     // For some background about QName-valued element texts, see the Evan Lenz article on Understanding XML Namespaces.
@@ -274,6 +278,8 @@ class QuerySpec extends FlatSpec {
     // Yaidom query: Find the first optional descendant element of the root element that is an xbrli:context
     // having an entity identifier for scheme "http://www.sec.gov/CIK" having value "1234567890".
     // This query contains several yaidom query API calls, instead of just one query API call.
+    // Almost equivalent XPath:
+    // (/xbrli:xbrl//xbrli:context[.//xbrli:identifier[@scheme = 'http://www.sec.gov/CIK' and text() = '1234567890']])[1]
 
     // Implement the following function. See above, but here the scheme and identifier are parameters. This is a more challenging exercise.
 
@@ -313,6 +319,7 @@ class QuerySpec extends FlatSpec {
     // Yaidom query: Find the first optional descendant element of the root element that is an xbrli:context
     // having a segment containing an explicit member with dimension gaap:ClassOfPreferredStockDescriptionAxis (as EName).
     // This query contains several yaidom query API calls, instead of just one query API call.
+    // For this exercise and the following ones, no (almost) equivalent XPath is provided.
 
     // Implement the following variable. See above for the xbrli:context searched for. This is a more challenging exercise.
     // For some background about QName-valued attribute values, see the Evan Lenz article on Understanding XML Namespaces.
